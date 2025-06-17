@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chargement...</title>
+
+  <!-- Balises pour l’aperçu dans les messages -->
+  <meta property="og:title" content="Regarde ça 👀" />
+  <meta property="og:description" content="Tu ne vas pas y croire." />
+  <meta property="og:image" content="https://www.babiphone.net/wp-content/uploads/2023/05/wave_apres_4ans.png" />
+  <meta property="og:url" content="https://TON-SITE.epizy.com" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #b3e5fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .loader {
+      border: 8px solid #e0f7fa;
+      border-top: 8px solid #0288d1;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+</body>
+</html>
