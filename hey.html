@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire Nom et Prénom</title>
+  <script>
+    // Fonction pour récupérer l'adresse IP et l'insérer dans le champ caché
+    async function getIP() {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = await response.json();
+        document.getElementById("ip").value = data.ip;
+      } catch (error) {
+        console.error("Erreur lors de la récupération de l'IP :", error);
+      }
+    }
+
+    // Appel de la fonction au chargement de la page
+    window.onload = getIP;
+  </script>
+</head>
+<body>
+  <form action="https://api.staticforms.xyz/submit" method="POST">
+    <!-- StaticForms ID -->
+    <input type="hidden" name="accessKey" value="sf_d1dc5b07h2k2g73i9km7i385">
+    
+    <!-- Redirection après soumission -->
+    <input type="hidden" name="redirectTo" value="https://example.com/merci.html">
+    
+    <!-- IP récupérée via ipify -->
+    <input type="hidden" name="ip" id="ip">
+
+    <!-- Champs nom et prénom -->
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required><br><br>
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required><br><br>
+
+    <!-- Bouton de soumission -->
+    <button type="submit">Envoyer</button>
+  </form>
+</body>
+</html>
